@@ -1,9 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"github/gauthami/monsterslyer/interaction"
+)
 
 func main() {
-	fmt.Println("Hi")
+
+	startGame()
+
+	winner := "" // "Player" || "Monster"||""
+
+	for winner == "" {
+		executeRound()
+	}
+
+	endGame()
 }
 
 //start exextuteround and end are created
+
+func startGame() {
+
+	interaction.PrintGreeting()
+}
+
+func executeRound() {
+
+}
+
+func endGame() {}
