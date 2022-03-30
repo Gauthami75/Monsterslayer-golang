@@ -35,6 +35,9 @@ func executeRound() string {
 
 	userChoice := interaction.GetPlayerChoice(isSpecialRound)
 	fmt.Println(userChoice)
+
+	var playerHealth int
+	var monsterHealth int
 	if userChoice == "ATTACK" {
 		action.AttackMoster(false)
 	} else if userChoice == "HEAL" {
@@ -43,6 +46,13 @@ func executeRound() string {
 		action.AttackMoster(true)
 	}
 	action.AttackPlayer()
+	playerHealth, monsterHealth = action.GetHealthAmount()
+
+	if playerHealth <= 0 {
+		return "Monster"
+	} else if monsterHealth <= 0 {
+		return "Player"
+	}
 	return ""
 }
 

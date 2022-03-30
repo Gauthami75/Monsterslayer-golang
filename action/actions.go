@@ -42,7 +42,9 @@ func AttackPlayer() {
 
 	currentPlayerHealth -= attackValue
 }
-
+func GetHealthAmount() (int, int) {
+	return currentPlayerHealth, currentMonsterHealth
+}
 func generateRandomNumber(min int, max int) int {
 	return randGenerator.Intn(max-min) + max
 }
